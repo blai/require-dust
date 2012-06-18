@@ -10,6 +10,7 @@ Tried [dustjs-requirejs-plugin](https://bitbucket.org/manuel_martin/dustjs-requi
 
 ## Demo ##
 Demo uses a modified version of [Linkedin version of dust.js](https://github.com/linkedin/dustjs), but it should work with the akdubya version as well. Search in demo/dust-bull-0.6.0.js for "RDUST MOD" to see the modification.
+
 	sh demo/build.sh
 	node tools/app.js
 	// then open http://localhost:3000/demo (the AMD mode) and
