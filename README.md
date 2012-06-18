@@ -14,3 +14,6 @@ Demo uses a modified version of [Linkedin version of dust.js](https://github.com
 	node tools/app.js
 	// then open http://localhost:3000/demo (the AMD mode) and
 	// http://localhost:3000/demo-build (the optimized mode) to see the it in action
+
+## License ##
+[WTFPL](http://sam.zoy.org/wtfpl/)
