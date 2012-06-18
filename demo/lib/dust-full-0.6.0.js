@@ -532,6 +532,7 @@ dust.escapeJs = function(s) {
 
 })(dust);
 
+// RDUST MOD
 //if (typeof exports !== "undefined") {
 //  dust.helpers = require("./dust-helpers").helpers;
 //  if (typeof process !== "undefined") {
@@ -539,6 +540,7 @@ dust.escapeJs = function(s) {
 //  }
 //  module.exports = dust;
 //}
+// END RDUST MOD
 (function(dust){
 
 function isSelect(context) {
@@ -3556,6 +3558,8 @@ dust.parse = parser.parse;
 
 })(typeof exports !== 'undefined' ? exports : getGlobal());
 
+// RDUST MOD
 if ( typeof define === "function" && define.amd ) {
   define( "dust", [], function () { return typeof exports !== 'undefined' ? exports : getGlobal(); } );
 }
+// END RDUST MOD
