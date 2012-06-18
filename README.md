@@ -1,8 +1,10 @@
 # [RequireJs](http://requirejs.org/) plugin for [Dust.js](http://akdubya.github.com/dustjs/) #
+
 ## Features ##
 - works the same way as [require-cs](https://github.com/jrburke/require-cs)
-- re-compile optimization as part of requirejs optimization
+- pre-compile as part of requirejs optimization
 - exclude plugin logic once optimized (using requirejs "stubModules" feature in v2.0.0+)
+
 ## Demo ##
 	sh demo/build.sh
 	node tools/app.js
