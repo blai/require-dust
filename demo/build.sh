@@ -1,4 +1,5 @@
 #!/bin/sh
 
+npm install
 rm -rf ../demo-build
-node ../tools/r.js -o build.js
+node ../node_modules/requirejs/bin/r.js -o build.js

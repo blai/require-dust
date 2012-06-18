@@ -4,12 +4,12 @@
     baseUrl: 'lib',
 
     //Uncomment to turn off uglify minification.
-    optimize: 'none',
+    optimize: 'uglify',
     
     uglify: {
         toplevel: true,
         ascii_only: true,
-        beautify: true,
+        beautify: false,
         max_line_length: 1000
     },
     
@@ -17,12 +17,8 @@
 
     //Stub out the cs module after a build since
     //it will not be needed.
-    //stubModules: ['rdust'],
-
-    paths: {
-        'rdust': '../../rdust',
-        'dust': 'dust-full-0.4.0'
-    },
+    stubModules: ['rdust'],
+    
     mainConfigFile: 'lib/main.js',
 
     modules: [

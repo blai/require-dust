@@ -1,7 +1,7 @@
 require.config({
     paths: {
-        rdust: '../../rdust',
-        dust: 'dust-full-0.4.0'
+        rdust: '../../require-dust',
+        dust: 'dust-full-0.6.0'
     }
 });
 
