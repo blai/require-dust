@@ -1,37 +1,14 @@
 {
-  "name": "requirejs",
-  "description": "Node adapter for RequireJS, for loading AMD modules. Includes RequireJS optimizer",
-  "version": "2.0.1",
-  "homepage": "http://github.com/jrburke/r.js",
-  "author": {
-    "name": "James Burke",
-    "email": "jrburke@gmail.com",
-    "url": "http://github.com/jrburke"
-  },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "https://github.com/jrburke/r.js/blob/master/LICENSE"
-    },
-    {
-      "type": "MIT",
-      "url": "https://github.com/jrburke/r.js/blob/master/LICENSE"
-    }
-  ],
-  "main": "./bin/r.js",
-  "bin": {
-    "r.js": "./bin/r.js"
-  },
-  "engines": {
-    "node": ">=0.4.0"
-  },
-  "_id": "requirejs@2.0.1",
-  "dependencies": {},
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "_engineSupported": true,
-  "_npmVersion": "1.1.22",
-  "_nodeVersion": "v0.6.18",
-  "_defaultsLoaded": true,
-  "_from": "requirejs@~2.0.1"
+	"name": "rdust",
+	"description": "RequireJs port for dust.js, for loading AMD modules. Includes RequireJS optimizer",
+	"version": "0.1.0",
+	"main": "require-dust.js",
+	"engines": {
+		"node": ">=0.4.0"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+		"requirejs": "~2"
+	}
 }

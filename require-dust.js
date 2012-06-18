@@ -1,6 +1,6 @@
 /**
- * @license cs 0.4.0+ Copyright (c) 2010-2011, The Dojo Foundation All Rights Reserved.
- * Available via the MIT or new BSD license.
+ * AMD implementation for dust.js
+ * This is based on require-cs code.
  * see: http://github.com/jrburke/require-cs for details
  */
 
@@ -8,7 +8,7 @@
 /*global define, window, XMLHttpRequest, importScripts, Packages, java,
   ActiveXObject, process, require */
 
-define(['dust'], function (dust) {
+define(['dust'], function(dust) {
     'use strict';
     var fs, getXhr,
         progIds = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'],
@@ -16,6 +16,8 @@ define(['dust'], function (dust) {
             throw new Error('Environment unsupported.');
         },
         buildMap = {};
+    
+    dust || (dust = exports);
 
     if (typeof process !== "undefined" &&
                process.versions &&
@@ -23,7 +25,6 @@ define(['dust'], function (dust) {
         //Using special require.nodeRequire, something added by r.js.
         fs = require.nodeRequire('fs');
         fetchText = function (path, callback) {
-            console.log("path: " + path);
             callback(fs.readFileSync(path, 'utf8'));
         };
     } else if ((typeof window !== "undefined" && window.navigator && window.document) || typeof importScripts !== "undefined") {
@@ -108,27 +109,20 @@ define(['dust'], function (dust) {
     }
 
     return {
-        get: function () {
-            return dust;
-        },
-
         write: function (pluginName, name, write) {
             if (buildMap.hasOwnProperty(name)) {
-                console.log("write pluginName: " + pluginName +", name: "+name)
                 var text = buildMap[name];
                 write.asModule(pluginName + "!" + name, text);
             }
         },
 
-        version: '0.4.0+',
-
         load: function (name, parentRequire, load, config) {
             var path = parentRequire.toUrl(name + '.dust');
             fetchText(path, function (text) {
-                console.log("load path: " + path + ", name: " + name +", text: " +text+",this: "+this);
                 //Do dust transform.
                 try {
-                  text = dust.compile(text, name);
+                  text = "define(['dust'],function(dust){"+dust.compile(text, name)+"})";
+                  //text = dust.compile(text, name);
                 }
                 catch (err) {
                   err.message = "In " + path + ", " + err.message;
@@ -148,15 +142,7 @@ define(['dust'], function (dust) {
                 }
                 /*@end@*/
 
-                load.fromText(name, text);
-
-//console.log("???????:" + parentRequire)
-                //Give result to load. Need to wait until the module
-                //is fully parse, which will happen after this
-                //execution.
-                parentRequire(['rdust!'+name], function (value) {
-                    load(value);
-                });
+                load.fromText('rdust!' + name, text);
             });
         }
     };
