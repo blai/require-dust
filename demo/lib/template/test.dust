@@ -1,1 +1,1 @@
-{#person}{root}: {name}, {age}{/person}
+{#person}<b>{root}</b>: {name}, {age}{/person}
