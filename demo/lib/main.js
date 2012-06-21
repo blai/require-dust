@@ -13,7 +13,7 @@ define(['dust', 'rdust!template/test'], function(dust, template) {
 			"age": 45
 		}
 	};
-	dust.render('template/test', data, function(err, out) {
+	template.render(data, function(err, out) {
 		console.info(out);
 		document.getElementById('content').innerHTML = out;
 	})
