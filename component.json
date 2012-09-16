@@ -1,0 +1,11 @@
+{
+	"name": "require-dust",
+	"description": "RequireJs port for dust.js, for loading AMD modules. Includes RequireJS optimizer",
+	"version": "0.2.0",
+	"main": "require-dust.js",
+	"engines": {
+		"node": "~0.6"
+	},
+	"dependencies": {
+	}
+}
